@@ -14,3 +14,20 @@ function myFunc() {
     }
 }
 ```
+<br/>
+The const has the same block scope but it can be used to initialize constants like shown in the example below. It is recommended to use const always when you can, otherwise use let.
+
+``` javascript
+
+function myFunc() {
+    const PI = 3.1415;
+
+    ...
+}
+```
+<br/>
+
+If you try to change the value of the constant, you will get an error like shown in the image below. 
+<br/>
+
+![alt text](https://vw4.viope.com/content/f291e5c33c58690b4f4d7e169eb527e8c0039166/ConstError.PNG)

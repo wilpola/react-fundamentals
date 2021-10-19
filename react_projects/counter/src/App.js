@@ -6,8 +6,11 @@ function App() {
 
 	return (
 		<div className='App'>
-			You have pressed the button {count} times
-			<br />
+			{count <= 10 ? (
+				<p>You have pressed the button {count} times</p>
+			) : (
+				<p>You have pressed the button more than 10 times</p>
+			)}
 			<button onClick={() => setCount(count + 1)}>Press me</button>
 		</div>
 	);

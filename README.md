@@ -1,6 +1,6 @@
 # React fundamentals course
-> Date of Enrollment: 10.18.2021 <br/>
-Start date: 10.18.2021 <br/>
+> Date of Enrollment: 10/18/2021 <br/>
+Start date: 10/18/2021 <br/>
 Credits: 3 ECTS <br/>
 
 -----

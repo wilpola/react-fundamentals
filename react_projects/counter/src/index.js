@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import App1 from './App1';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<App />
-		<App />
+		<App1 message='hello there! this message is definitely too long' />
 		<App />
 	</React.StrictMode>,
 	document.getElementById('root')

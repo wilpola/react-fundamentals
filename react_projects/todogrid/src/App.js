@@ -4,6 +4,7 @@ import './App.css';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
+import ReactiveButton from 'reactive-button';
 
 function App() {
 	const [todo, setTodo] = useState({ description: '', date: '', status: '' });
@@ -19,7 +20,7 @@ function App() {
 	};
 
 	return (
-		<div className='App'>
+		<div className='App' style={{ marginTop: '50px' }}>
 			<input
 				placeholder='Description'
 				name='description'
@@ -38,23 +39,26 @@ function App() {
 				value={todo.status}
 				onChange={inputChanged}
 			/>
-			<button onClick={addTodo}>Add</button>
+			<ReactiveButton onClick={addTodo} rounded color='violet' />
 			<div
 				className='ag-theme-material'
 				style={{ height: 600, width: 600, margin: 'auto' }}>
-				<AgGridReact rowData={todos}>
+				<AgGridReact rowData={todos} animateRows={true}>
 					<AgGridColumn
 						field='description'
 						sortable={true}
-						filter={true}></AgGridColumn>
+						filter={true}
+						lockPosition={true}></AgGridColumn>
 					<AgGridColumn
 						field='date'
 						sortable={true}
-						filter={true}></AgGridColumn>
+						filter={true}
+						lockPosition={true}></AgGridColumn>
 					<AgGridColumn
 						field='status'
 						sortable={true}
-						filter={true}></AgGridColumn>
+						filter={true}
+						lockPosition={true}></AgGridColumn>
 				</AgGridReact>
 			</div>
 		</div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
+import { Delete, Save } from '@material-ui/icons';
 import TextField from '@material-ui/core/TextField';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -51,6 +51,7 @@ function App() {
 				style={{ margin: 10 }}
 				color='primary'
 				variant='outlined'
+				startIcon={<Save />}
 				onClick={addTodo}>
 				Add
 			</Button>
@@ -66,7 +67,7 @@ function App() {
 										size='small'
 										color='secondary'
 										onClick={() => deleteTodo(index)}>
-										<DeleteIcon />
+										<Delete />
 									</IconButton>
 								</Tooltip>
 							</td>

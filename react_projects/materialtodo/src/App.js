@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
 import TextField from '@material-ui/core/TextField';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 function App() {
 	const [todo, setTodo] = useState({ description: '', date: '' });
@@ -24,6 +25,11 @@ function App() {
 
 	return (
 		<div className='App'>
+			<AppBar position='static'>
+				<Toolbar>
+					<Typography variant='h6'>Todolist</Typography>
+				</Toolbar>
+			</AppBar>
 			<TextField
 				style={{ marginRight: 10 }}
 				label='Description'
@@ -52,12 +58,12 @@ function App() {
 							<td>{todo.description}</td>
 							<td>{todo.date}</td>
 							<td>
-								<IconButton
+								<Button
 									size='small'
 									color='secondary'
 									onClick={() => deleteTodo(index)}>
-									<DeleteIcon />
-								</IconButton>
+									Delete
+								</Button>
 							</td>
 						</tr>
 					))}

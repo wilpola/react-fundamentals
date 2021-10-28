@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 import TextField from '@material-ui/core/TextField';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function App() {
 	const [todo, setTodo] = useState({ description: '', date: '' });
@@ -58,12 +61,14 @@ function App() {
 							<td>{todo.description}</td>
 							<td>{todo.date}</td>
 							<td>
-								<Button
-									size='small'
-									color='secondary'
-									onClick={() => deleteTodo(index)}>
-									Delete
-								</Button>
+								<Tooltip title='Delete todo'>
+									<IconButton
+										size='small'
+										color='secondary'
+										onClick={() => deleteTodo(index)}>
+										<DeleteIcon />
+									</IconButton>
+								</Tooltip>
 							</td>
 						</tr>
 					))}

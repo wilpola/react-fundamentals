@@ -3,6 +3,7 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import TextField from '@material-ui/core/TextField';
 
 function App() {
 	const [todo, setTodo] = useState({ description: '', date: '' });
@@ -23,19 +24,27 @@ function App() {
 
 	return (
 		<div className='App'>
-			<input
-				placeholder='Description'
+			<TextField
+				style={{ marginRight: 10 }}
+				label='Description'
 				name='description'
 				value={todo.description}
 				onChange={inputChanged}
 			/>
-			<input
-				placeholder='Date'
+			<TextField
+				style={{ marginRight: 10 }}
+				label='Date'
 				name='date'
 				value={todo.date}
 				onChange={inputChanged}
 			/>
-			<Button onClick={addTodo}>Add</Button>
+			<Button
+				style={{ margin: 10 }}
+				color='primary'
+				variant='outlined'
+				onClick={addTodo}>
+				Add
+			</Button>
 			<table>
 				<tbody>
 					{todos.map((todo, index) => (
